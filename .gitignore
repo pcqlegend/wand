@@ -1,0 +1,6 @@
+.idea
+target
+*.iml
+wand-standalone-sdk/target
+wand-web/target
+*/tree.txt

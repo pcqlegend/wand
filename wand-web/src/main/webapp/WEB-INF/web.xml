@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                                            http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+            <taglib-location>/WEB-INF/fmt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/fmt-rt</taglib-uri>
+            <taglib-location>/WEB-INF/fmt-rt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+            <taglib-location>/WEB-INF/c.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/core-rt</taglib-uri>
+            <taglib-location>/WEB-INF/c-rt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
+            <taglib-location>/WEB-INF/sql.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/sql-rt</taglib-uri>
+            <taglib-location>/WEB-INF/sql-rt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
+            <taglib-location>/WEB-INF/x.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/x-rt</taglib-uri>
+            <taglib-location>/WEB-INF/x-rt.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
+    <!-- 字符集 过滤器  -->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>GBK</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Spring MVC servlet -->
+    <servlet>
+        <servlet-name>SpringMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>WEB-INF/applicationContext-mvc.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>
+        <!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>WEB-INF/applicationContext.xml</param-value>
+        <!-- 默认是/WEB-INF/applicationContext.xml -->
+    </context-param>
+
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>wandServlet</servlet-name>
+        <servlet-class>com.pcq.WandStandAloneServlet</servlet-class>
+        <init-param>
+            <param-name>secretKey</param-name>
+            <param-value>wand</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>wandServlet</servlet-name>
+        <url-pattern>/wand/*</url-pattern>
+    </servlet-mapping>
+    <display-name>Archetype Created Web Application</display-name>
+</web-app>
