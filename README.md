@@ -78,6 +78,8 @@ http://localhost:8080/wand/methodList?secretKey=wand
 click submit then like as below,
 <img src=https://github.com/pcqlegend/wand/blob/master/2.png width="50%" height="50%"/>
 
+##Note
+In the url http://localhost:8080/wand/methodList?secretKey=wand ,secretKey is your wand password which configed in your servelet intectiong.
 
 
 ## Latest releases
