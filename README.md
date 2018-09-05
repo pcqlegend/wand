@@ -74,7 +74,7 @@ public class TestService {
 ````
 http://localhost:8080/wand/methodList?secretKey=wand
 ````
-![Mou icon](https://github.com/pcqlegend/wand/blob/master/1.png =400x200)
+<img src=https://github.com/pcqlegend/wand/blob/master/1.png />
 
 
 ## Latest releases
