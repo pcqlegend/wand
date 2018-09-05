@@ -1,10 +1,10 @@
 # wand
 
-##Overview
+## Overview
  Like [swagger](https://swagger.io/) ,wand provide a visual and simple tool to improve out efficiency of our development and test in SrpingFrameWork web application. Without this tool ,we should test our each interface with a controller,and then use browser to test. But when 
 the method is post and  you have too many parameter ,this operation may be cost. If there is a ui can provide user to test interface with simple form ,may be very easier and more effective.Wand just is the tool you need.
-##QuickStart
-###First import maven  pom.xml in your project
+## QuickStart
+### First import maven  pom.xml in your project
 
 ````
 <dependency>
@@ -35,7 +35,7 @@ public class DemoApplication {
     }
 }
 ````
-###Third add wand method Annotation for your interface
+### Third add wand method Annotation for your interface
 ````
     @WandMethod(desc = "test", params = "user_name&user_id")
 ````
@@ -52,12 +52,12 @@ public class TestService {
     }
 }
 ````
-###Fourth visit url 
+### Fourth visit url 
 ````
 http://localhost:8080/wand/methodList?secretKey=wand
 ````
 
 
 
-##Latest releases
+## Latest releases
 
