@@ -13,7 +13,7 @@
 </dependency>
 ````
 ### Second: inject WandServlet
-For Spring Boot
+### For Spring Boot 
 ````
 @SpringBootApplication
 public class DemoApplication {
@@ -34,6 +34,23 @@ public class DemoApplication {
     }
 }
 ````
+ If your web application is a war on tomcat ,you can add filter in your WEB-INF/web.xml like this 
+ ````
+  <servlet>
+        <servlet-name>wandServlet</servlet-name>
+        <servlet-class>com.pcq.WandStandAloneServlet</servlet-class>
+        <init-param>
+            <param-name>secretKey</param-name>
+            <param-value>wand</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>wandServlet</servlet-name>
+        <url-pattern>/wand/*</url-pattern>
+    </servlet-mapping>
+ ````
 ### Third: add wand method Annotation for your interface
 ````
     @WandMethod(desc = "test", params = "user_name&user_id")
@@ -50,6 +67,7 @@ public class TestService {
         return user;
     }
 }
+ *Node*: the method must be public. 
 ````
 ### Fourth: visit url 
 ````
