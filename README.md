@@ -67,8 +67,9 @@ public class TestService {
         return user;
     }
 }
- *Node*: the method must be public. 
 ````
+ *Node*: the method must be public. 
+
 ### Fourth: visit url 
 ````
 http://localhost:8080/wand/methodList?secretKey=wand
