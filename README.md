@@ -75,6 +75,9 @@ public class TestService {
 http://localhost:8080/wand/methodList?secretKey=wand
 ````
 <img src=https://github.com/pcqlegend/wand/blob/master/1.png width="50%" height="50%"/>
+click submit then like as below,
+<img src=https://github.com/pcqlegend/wand/blob/master/2.png width="50%" height="50%"/>
+
 
 
 ## Latest releases
