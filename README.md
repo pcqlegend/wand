@@ -1,4 +1,4 @@
-# wand
+# WAND
 
 ## Overview
  Like [swagger](https://swagger.io/) ,wand provide a visual and simple tool to improve out efficiency of our development and test in SrpingFrameWork web application. Without this tool ,we should test our each interface with a controller,and then use browser to test. But when 
@@ -8,12 +8,12 @@ the method is post and  you have too many parameter ,this operation may be cost.
 
 ````
 <dependency>
-			<groupId>com.pcq</groupId>
-			<artifactId>wand-stand-alone-sdk</artifactId>
-			<version>1.3.0</version>
-		</dependency>
+	<groupId>com.pcq</groupId>
+	<artifactId>wand-stand-alone-sdk</artifactId>
+	<version>1.3.0</version>
+</dependency>
 ````
-###Second Inject WandServlet
+### Second Inject WandServlet
 For Spring Boot
 ````
 @SpringBootApplication
