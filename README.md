@@ -83,4 +83,8 @@ In the url http://localhost:8080/wand/methodList?secretKey=wand ,secretKey is yo
 
 
 ## Latest releases
+## TODO
+- central console board
+- add variable annotation
+- distributed client
 
